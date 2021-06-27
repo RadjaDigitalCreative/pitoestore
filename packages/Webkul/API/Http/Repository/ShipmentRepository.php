@@ -66,5 +66,28 @@ class ShipmentRepository
 
         return json_decode($response);
     }
+
+    public function subdistrict($request)
+    {
+        $CURLOPT_URL = 'https://pro.rajaongkir.com/api/subdistrict?city='.$request->city.'';
+        $CURLOPT_CUSTOMREQUEST ='GET';
+        $response = $this->baseCRUL->API_GET($CURLOPT_URL, $CURLOPT_CUSTOMREQUEST);
+
+        return json_decode($response);
+    }
+
+    public function waybill($request)
+    {
+        $CURLOPT_URL = 'https://pro.rajaongkir.com/api/waybill';
+        $CURLOPT_CUSTOMREQUEST ='POST';
+        $CURLPOST_DATA = [
+            'waybill' => $request->waybill,
+            'courier' => $request->courier,
+        ];
+
+        $response = $this->baseCRUL->API_POST($CURLOPT_URL, $CURLOPT_CUSTOMREQUEST, $CURLPOST_DATA);
+
+        return json_decode($response);
+    }
 }
 

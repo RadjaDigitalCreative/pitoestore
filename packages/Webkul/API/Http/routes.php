@@ -63,7 +63,9 @@ Route::group(['prefix' => 'api'], function ($router) {
         // base pengiriman dan cek resi
         Route::get('province', 'Pengiriman@province');
         Route::get('city', 'Pengiriman@city');
+        Route::post('subdistrict', 'Pengiriman@subdistrict');
         Route::post('/cost', 'Pengiriman@cost');
         Route::post('/internationalCost', 'Pengiriman@internationalCost');
+        Route::post('/waybill', 'Pengiriman@waybill');
     });
 });

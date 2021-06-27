@@ -30,6 +30,11 @@ class Pengiriman extends Controller
         $response = $this->shipmentRepository->city();
         return response()->json($response);
     }
+    public function subdistrict(Request $request)
+    {
+        $response = $this->shipmentRepository->subdistrict($request);
+        return response()->json($response);
+    }
 
     public function cost(Request $request)
     {
@@ -40,6 +45,11 @@ class Pengiriman extends Controller
     public function internationalCost(Request $request)
     {
         $response = $this->shipmentRepository->internationalCost($request);
+        return response()->json($response);
+    }
+    public function waybill(Request $request)
+    {
+        $response = $this->shipmentRepository->waybill($request);
         return response()->json($response);
     }
 
